@@ -23,14 +23,12 @@
             </div>
             <div class="d-lg-flex align-items-center gap-2">
                 <div class="d-flex align-items-center justify-content-center gap-2">
-                    <div class="dropdown d-flex">
-                        <a class="btn btn-primary d-flex align-items-center gap-1 " href="javascript:void(0)"
-                            id="drop4" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn btn-primary d-flex align-items-center gap-1 " href="{{ route('logout') }}"
+                        >
                             <i class="ti ti-logout fs-5"></i>
                             Logout
                             <i class="ti ti-chevron-down fs-5"></i>
                         </a>
-                    </div>
                 </div>
             </div>
 

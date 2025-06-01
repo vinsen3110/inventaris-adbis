@@ -9,16 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-     public function up()
+    public function up(): void
     {
-        Schema::create('mebelers', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_mebeler');
-            $table->integer('jumlah_mebeler');
-            $table->string('satuan_mebeler');
-            $table->date('tanggal_masuk_mebeler');
+        Schema::create('alats', function (Blueprint $table) {
+             $table->id();
+            $table->string('nama_alat');
+            $table->integer('jumlah_alat');
+            $table->string('satuan_alat');
+            $table->date('tanggal_masuk_alat');
             $table->json('foto')->nullable();
-            $table->text('keterangan_mebeler')->nullable();
+            $table->text('keterangan_alat')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mebelers');
+        Schema::dropIfExists('alats');
     }
 };

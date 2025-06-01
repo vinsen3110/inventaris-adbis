@@ -17,8 +17,6 @@ class ATK extends Model
         'satuan',
         'tanggal_masuk',
         'keterangan',
-        'foto_1',
-        'foto_2',
-        'foto_3',
+        'foto',
     ];
 }

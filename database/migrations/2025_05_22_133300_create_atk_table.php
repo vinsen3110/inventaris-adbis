@@ -18,9 +18,7 @@ return new class extends Migration
         $table->string('satuan');
         $table->date('tanggal_masuk');
         $table->text('keterangan')->nullable();
-        $table->string('foto_1')->nullable(); // Tambahan kolom foto
-        $table->string('foto_2')->nullable();
-        $table->string('foto_3')->nullable();
+        $table->json('foto')->nullable();
         $table->timestamps();
     });
 }
