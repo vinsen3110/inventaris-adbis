@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Alat extends Model
 {
-    // Nama tabel (opsional jika sudah sesuai konvensi plural)
-    protected $table = 'alats';
+    use HasFactory;
 
-    // Kolom yang boleh diisi mass assignment
+    protected $table = 'alats'; // optional, tapi bisa ditulis biar eksplisit
+
     protected $fillable = [
         'nama_alat',
         'jumlah_alat',
@@ -19,8 +20,13 @@ class Alat extends Model
         'keterangan_alat',
     ];
 
-    // Casting kolom 'foto' JSON menjadi array otomatis
     protected $casts = [
         'foto' => 'array',
     ];
+
+    // Relasi ke alat_keluars
+    public function keluars()
+    {
+        return $this->hasMany(AlatKeluar::class, 'alat_id');
+    }
 }
